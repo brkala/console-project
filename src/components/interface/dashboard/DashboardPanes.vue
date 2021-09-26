@@ -3,12 +3,27 @@
     <splitpanes style="height: 100%" horizontal>
       <pane :size="80">
         <splitpanes>
-          <pane :size="20"> 1 </pane>
+          <pane :size="20">
+            <vertical-box>
+              <box-heading> Topic </box-heading>
+              <scroll-box></scroll-box>
+            </vertical-box>
+          </pane>
           <pane>
             <div class="pane-balancer">
               <splitpanes>
-                <pane> 2 </pane>
-                <pane> 3 </pane>
+                <pane>
+                  <vertical-box>
+                    <box-heading> Topic </box-heading>
+                    <scroll-box></scroll-box>
+                  </vertical-box>
+                </pane>
+                <pane>
+                  <vertical-box>
+                    <box-heading> Topic </box-heading>
+                    <scroll-box></scroll-box>
+                  </vertical-box>
+                </pane>
               </splitpanes>
               <div>asdasd</div>
             </div>
@@ -22,9 +37,12 @@
 
 <script>
 import IconText from "@/components/interface/typography/IconText.vue";
+import BoxHeading from "@/components/interface/typography/BoxHeading.vue";
+import ScrollBox from "@/components/interface/box/ScrollBox.vue";
+import VerticalBox from "@/components/interface/box/VerticalBox.vue";
 import splitpanes from "@/mixins/splitpanes";
 export default {
-  components: { IconText },
+  components: { IconText, BoxHeading, ScrollBox, VerticalBox },
   mixins: [splitpanes],
 };
 </script>

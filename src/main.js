@@ -5,7 +5,6 @@ import store from './store'
 import "@/plugins/element_ui";
 import "@/plugins/mdi_icons";
 import "@/plugins/splitpanes";
-import "@/plugins/custom_scrollbar";
 
 
 Vue.config.productionTip = false

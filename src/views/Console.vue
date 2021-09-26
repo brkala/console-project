@@ -35,7 +35,7 @@ section.console {
   align-items: stretch;
   height: 100vh;
   width: 100%;
-  background-color: $--background-color-base;
+
   color: $--color-text-regular;
   > main {
     display: flex;
