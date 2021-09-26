@@ -1,6 +1,8 @@
 <template>
-  <article class="icon-text" :class="color">
-    <mdicon class="icon" :size="20" :name="icon" :class="iconColor" />
+  <article class="icon-text" :class="color" @click="$emit('click')">
+    <span :class="iconColor">
+      <mdicon class="icon" :size="20" :name="icon" />
+    </span>
     <span class="text" :class="textColor"><slot /></span>
   </article>
 </template>
@@ -24,6 +26,8 @@ export default {
 .icon-text {
   display: inline-block;
   color: $--color-text-regular;
+  user-select: none;
+  white-space: nowrap;
   .text {
     margin-left: 4px;
     font-weight: bold;

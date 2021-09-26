@@ -1,5 +1,6 @@
 import treeData from "@/assets/data/json/content.json";
 export default {
+    namespaced: true,
     state: () => ({
         tree: treeData,
         current: null,
@@ -35,14 +36,14 @@ export default {
 
                 }
             }
-            const result = goDeeper(state.payload, state.tree);
+            const result = goDeeper(payload, state.tree);
             if (result) {
                 if (result.prev && !result.prev.children?.length) {
                     state.prev = result.prev;
                 }
                 state.current = result.current;
                 if (result.next && !result.prev.children?.length) {
-                    state.prev = result.next;
+                    state.next = result.next;
                 }
 
             }
@@ -55,9 +56,9 @@ export default {
     },
 
     getters: {
-        getTree: (state) => state.tree,
-        getCurrent: (state) => state.current,
-        getPrev: (state) => state.prev,
-        getNext: (state) => state.next,
+        tree: (state) => state.tree,
+        current: (state) => state.current,
+        prev: (state) => state.prev,
+        next: (state) => state.next,
     }
 }

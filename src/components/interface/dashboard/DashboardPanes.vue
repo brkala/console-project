@@ -6,7 +6,9 @@
           <pane :size="20">
             <vertical-box>
               <box-heading> Topic </box-heading>
-              <scroll-box></scroll-box>
+              <scroll-box no-gutters>
+                <console-navigation />
+              </scroll-box>
             </vertical-box>
           </pane>
           <pane>
@@ -40,9 +42,16 @@ import IconText from "@/components/interface/typography/IconText.vue";
 import BoxHeading from "@/components/interface/typography/BoxHeading.vue";
 import ScrollBox from "@/components/interface/box/ScrollBox.vue";
 import VerticalBox from "@/components/interface/box/VerticalBox.vue";
+import ConsoleNavigation from "@/components/interface/navigation/ConsoleNavigation.vue";
 import splitpanes from "@/mixins/splitpanes";
 export default {
-  components: { IconText, BoxHeading, ScrollBox, VerticalBox },
+  components: {
+    IconText,
+    BoxHeading,
+    ScrollBox,
+    VerticalBox,
+    ConsoleNavigation,
+  },
   mixins: [splitpanes],
 };
 </script>
