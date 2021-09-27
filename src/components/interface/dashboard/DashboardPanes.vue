@@ -33,7 +33,9 @@
                   <pane v-if="pane.type == 'bash'" :key="key">
                     <vertical-box>
                       <box-heading icon="console-line"> Live </box-heading>
-                      <scroll-box> </scroll-box>
+                      <scroll-box fluid class="vcom">
+                        <vue-command :commands="commands"
+                      /></scroll-box>
                     </vertical-box>
                   </pane>
                 </template>
@@ -76,6 +78,8 @@ import ScrollBox from "@/components/interface/box/ScrollBox.vue";
 import VerticalBox from "@/components/interface/box/VerticalBox.vue";
 import ConsoleNavigation from "@/components/interface/navigation/ConsoleNavigation.vue";
 import splitpanes from "@/mixins/splitpanes";
+import VueCommand, { createStdout } from "vue-command";
+import "vue-command/dist/vue-command.css";
 export default {
   components: {
     RichText,
@@ -84,10 +88,18 @@ export default {
     ScrollBox,
     VerticalBox,
     ConsoleNavigation,
+    VueCommand,
   },
   mixins: [splitpanes],
   mounted() {
     this.$store.commit("content/setCurrent", this.tree[0]);
+  },
+  data() {
+    return {
+      commands: {
+        "hello-world": () => createStdout("Hello world"),
+      },
+    };
   },
   computed: {
     tree() {
@@ -123,6 +135,9 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .vcom {
+    background: black;
   }
 }
 </style>

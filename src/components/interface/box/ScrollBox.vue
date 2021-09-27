@@ -1,5 +1,8 @@
 <template>
-  <section class="scroll-box" :class="{ 'no-gutters': noGutters }">
+  <section
+    class="scroll-box"
+    :class="{ 'no-gutters': noGutters, fluid: fluid }"
+  >
     <div class="content">
       <slot />
     </div>
@@ -11,6 +14,7 @@ export default {
   components: {},
   props: {
     noGutters: Boolean,
+    fluid: Boolean,
   },
 };
 </script>
@@ -33,6 +37,16 @@ export default {
     .content {
       padding: 16px 0px;
       width: 100%;
+    }
+  }
+  &.fluid {
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      padding: 0 0px;
+      width: 100%;
+      min-height: 100%;
     }
   }
   /* width */
