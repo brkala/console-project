@@ -35,10 +35,12 @@ export default {
     white-space: nowrap;
   }
 
-  .primary {
+  .primary,
+  &.primary {
     color: $--color-primary;
   }
-  .success {
+  .success,
+  &.success {
     color: $--color-success;
   }
 }

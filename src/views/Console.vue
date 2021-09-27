@@ -9,7 +9,7 @@
       </main>
       <footer>
         <span class="copyright">
-          Copyright © 2021 CodeNotary, Inc. All rights reserved.
+          Copyright © 2021 Galaxec, Inc. All rights reserved.
         </span>
       </footer>
     </main>
@@ -47,7 +47,8 @@ section.console {
       height: 100%;
     }
     > footer {
-      padding: 4px 0;
+      padding: 10px 0;
+      font-size: 0.8rem;
     }
   }
   > aside {

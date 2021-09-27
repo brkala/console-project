@@ -65,12 +65,15 @@
           </pane>
         </splitpanes>
       </pane>
-      <pane>4</pane>
+      <pane>
+        <result-tabs />
+      </pane>
     </splitpanes>
   </section>
 </template>
 
 <script>
+import ResultTabs from "@/components/interface/dashboard/ResultTabs.vue";
 import RichText from "@/components/interface/typography/RichText.vue";
 import IconText from "@/components/interface/typography/IconText.vue";
 import BoxHeading from "@/components/interface/typography/BoxHeading.vue";
@@ -82,6 +85,7 @@ import VueCommand, { createStdout } from "vue-command";
 import "vue-command/dist/vue-command.css";
 export default {
   components: {
+    ResultTabs,
     RichText,
     IconText,
     BoxHeading,
