@@ -1,5 +1,5 @@
 <template>
-  <el-tabs class="tabs" v-model="activeName" @tab-click="handleClick">
+  <el-tabs class="tabs" v-model="activeName">
     <el-tab-pane name="output">
       <icon-text
         class="it"
@@ -34,11 +34,6 @@ export default {
     return {
       activeName: "output",
     };
-  },
-  methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
-    },
   },
 };
 </script>
